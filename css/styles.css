@@ -385,6 +385,9 @@ img {
 .basement .social-list {
   gap: 16px;
 }
+.basement .social-list-item:hover {
+  background-color: #31d0aa;
+}
 .basement .social-list-item-icon {
   width: 24px;
   height: 24px;
