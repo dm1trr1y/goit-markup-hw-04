@@ -76,6 +76,8 @@ img {
 /* navigation */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header .container {
   display: flex;
@@ -99,17 +101,20 @@ img {
   color: #2e2f42;
   /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
-.navigation-list .link:active::after {
+.navigation-list a.active-el {
+  color: #404bbf;
+}
+.active-el::after {
   content: "";
   position: absolute;
   display: block;
   background-color: #404bbf;
   width: 100%;
   height: 4px;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   border-radius: 2px;
-  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-list .link:hover,
 .navigation-list .link:focus {
@@ -151,6 +156,7 @@ img {
   display: block;
   padding: 24px 0;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list-item-link:hover,
 .contacts-list-item-link:focus {
@@ -164,7 +170,9 @@ img {
     url("../images/people-office-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 188px 0;
+  max-width: 1440px;
 }
 .hero .container {
   display: flex;
@@ -196,6 +204,7 @@ img {
   min-width: 169px;
   height: 56px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero .btn:hover,
 .hero .btn:focus {
@@ -203,14 +212,17 @@ img {
 }
 
 /* features */
-.icon-big {
+/* .icon-big {
   display: block;
   width: 64px;
   height: 64px;
   margin: 24px 100px;
-}
+} */
 .features-icon-box {
   /* padding: 24px 100px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f4f4fd;
   border-radius: 4px;
   border: 1px solid #8e8f99;
@@ -276,16 +288,21 @@ img {
   justify-content: center;
   align-items: center;
 }
-/* .social-list-item {
+.social-list-item {
   width: 40px;
   height: 40px;
-} */
+}
 .social-list-item-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #4d5ae5;
   border-radius: 50%;
-  padding: 12px;
+  /* padding: 12px; */
   cursor: pointer;
+  height: 100%;
+  width: 100%;
+
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-item-link:hover,
@@ -293,8 +310,8 @@ img {
   background-color: #404bbf;
 }
 .social-list-item-icon {
-  width: 16px;
-  height: 16px;
+  /* width: 16px;
+  height: 16px; */
   fill: #fff;
 }
 
@@ -322,12 +339,11 @@ img {
   height: 300px;
 
   background-color: #4d5ae5;
+  /* не використовував тут !important бо казали що нерпавильно його використовувати, замість цього змінив специфічність правила щоб почав працювати внутрішній падінг */
   padding: 40px 32px;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* не використовував тут !important бо казали що нерпавильно його використовувати, замість цього змінив специфічність правила щоб почав працювати внутрішній падінг */
-}
-.portfolio-overlay-text {
+
   font-weight: 400;
   font-size: 16px;
 
@@ -369,9 +385,11 @@ img {
 }
 .basement .container {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: flex-start;
-  gap: 120px;
+}
+.basement .logo-copy {
+  margin-right: 120px;
 }
 .basement .logo {
   display: inline-block;
@@ -391,13 +409,13 @@ img {
 .basement .social-list-item-link:focus {
   background-color: #31d0aa;
 }
-.basement .social-list-item-icon {
+/* .basement .social-list-item-icon {
   width: 24px;
   height: 24px;
-}
-.basement .social-list-item-link {
+} */
+/* .basement .social-list-item-link {
   padding: 8px;
-}
+} */
 .social-text {
   font-weight: 500;
   font-size: 16px;
