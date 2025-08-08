@@ -68,7 +68,7 @@ img {
   max-width: 100%;
 }
 .container {
-  width: 1158px;
+  width: 112п8px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -173,6 +173,7 @@ img {
   background-position: center;
   padding: 188px 0;
   max-width: 1440px;
+  margin: 0 auto;
 }
 .hero .container {
   display: flex;
@@ -404,6 +405,7 @@ img {
 }
 .basement .social-list {
   gap: 16px;
+  margin-top: 0px;
 }
 .basement .social-list-item-link:hover,
 .basement .social-list-item-link:focus {
